@@ -1,0 +1,14 @@
+public class Task13{
+  public static void main (String[]args){
+    int counter=24;
+      while (counter<=24 && counter>=-6){
+      if (counter==-6){
+       System.out.print(counter);
+      }
+       else{
+         System.out.print(counter+",");
+       }
+     counter-=6;
+      }
+  }
+}

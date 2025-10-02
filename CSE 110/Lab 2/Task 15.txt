@@ -1,0 +1,14 @@
+public class Task15{
+  public static void main(String[]args){
+    int counter=0;
+    int sum=0;
+    int average=0;
+    for (int i=1;i<=200;i++){
+      sum+=i;
+      counter+=1;
+    }
+     average+=sum/counter;
+     System.out.println("Sum: "+sum);
+     System.out.print("Average: "+average);
+  }
+}

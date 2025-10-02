@@ -1,0 +1,16 @@
+public class Task1{
+  public static void main(String[]args){
+    int x=100;
+    int y=23;
+    int z=-4;
+    if (x>y && x>z){
+      System.out.print("largest number: "+x);
+    }
+    else if (y>x && y>z){
+      System.out.print("largest number: "+y);
+    }
+    else{
+      System.out.print("largest number: "+z);
+    }
+  }
+} 

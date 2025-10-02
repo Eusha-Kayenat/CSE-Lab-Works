@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Task8{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter an input:");
+    int payment = sc.nextInt();
+    int age = sc.nextInt();
+    if (age==18){
+      System.out.print("Your tax amounts is 0 Tk");
+    }
+    else if (payment>=10000 && payment<=20000){
+      double tax=(payment*0.05);
+      System.out.print("Your tax amounts is "+tax+" Tk");
+    }
+    else if(payment>20000){
+      double tax=(payment*0.1);
+      System.out.print("Your tax amounts is "+tax+" Tk");
+    }
+    else{
+      System.out.print("Your tax amounts is 0 Tk");
+    }
+  }
+}

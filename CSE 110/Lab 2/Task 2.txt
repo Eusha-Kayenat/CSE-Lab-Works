@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Task2{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number: ");
+    int grade = sc.nextInt();
+    if (grade<=100 || grade>=90){
+      System.out.print("Your grade is A");
+  }
+    else if (grade<=89 || grade>=85){
+      System.out.print("Your grade is A-");
+  }
+    else if (grade<=84 || grade>=70){
+      System.out.print("Your grade is B");
+  }
+    else if (grade<=69 || grade>=57){
+      System.out.print("Your grade is C");
+  }
+    else if (grade<=56 || grade>=50){
+      System.out.print("Your grade is D");
+  }
+    else{
+      System.out.print("Your grade is F");
+  }
+ }
+}

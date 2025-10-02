@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Task10{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the numbers:");
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+    int z = sc.nextInt();
+    if (x==y && y==z) {
+      System.out.print("This is a Equilateral triangle");
+    }
+    else if (x!=y && y!=z && x!=z){
+        System.out.print("This is a Scalene triangle");
+      }
+    else{
+        System.out.print("This is a Isosceles triangle");
+      }  
+    }
+  }
