@@ -1,0 +1,9 @@
+public class Task11_6B{
+  public static void main(String[]args){
+    System.out.println("Enter a number: ");
+    int x= 35;
+    String y="World";
+    String sum=  x+y;
+    System.out.println(sum);
+  }  
+}  

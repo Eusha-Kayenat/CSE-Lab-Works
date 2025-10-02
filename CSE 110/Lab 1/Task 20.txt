@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Task20{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    double a=sc.nextDouble();
+    double b=sc.nextDouble();
+    float c=(float)Math.sqrt(a*a+b*b);
+    double x=a/c;
+    double y=b/c;
+    double z=b/c;
+    double w=a/c;
+    System.out.println("sin(A)= "+x);
+    System.out.println("cos(A)= "+y);
+    System.out.println("sin(B)= "+z);
+    System.out.print("cos(B)= "+w);
+  }
+}

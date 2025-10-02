@@ -1,0 +1,14 @@
+public class Task11_5{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    int x=sc.nextInt();
+    double y=sc.nextDouble();
+    double sum=  x+y;
+    double product=  x*y;
+    double division= x/y;
+    System.out.println(sum);
+    System.out.println(product);
+    System.out.print(division);
+  }
+}

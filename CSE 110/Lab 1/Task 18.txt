@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Task18{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    int x=sc.nextInt();
+    int y= x%100;
+    int z= y%10;
+    int w= y/10;
+    System.out.println(z);
+    System.out.print(w);
+  }
+}
