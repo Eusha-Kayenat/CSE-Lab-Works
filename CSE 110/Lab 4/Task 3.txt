@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter an integer: ");
+    int N=sc.nextInt();
+    int neg=0;
+    int non_neg=0;
+    for (int i=1;i<=N;i++){
+      System.out.println("Enter number "+i+":");
+      int num=sc.nextInt();
+      if (num>=0){
+        non_neg+=1;
+      }
+      else if (num<0){
+        neg+=1;
+      }
+     }
+    System.out.println(non_neg+" Non-negative Numbers");
+    System.out.print(neg+" Negative Numbers");
+  }
+}
