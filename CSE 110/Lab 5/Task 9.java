@@ -1,28 +1,44 @@
 import java.util.Scanner;
-public class Task8{
-  public static void main(String[]args){
-    Scanner sc=new Scanner(System.in);
-    System.out.println("Enter a String: ");
-    String s=sc.nextLine();
-    String output="";
-    int counter=0;
-    for(int i=0;i<s.length();i=i+1){
-      char ch=s.charAt(i);
-    if((ch>='a'&& ch<='z')||(ch>='A'&& ch<='Z')){
-      if(counter%2==0){
-        if(ch>='A' && ch<='Z'){
-          ch=(char)(ch+32);
-        }
-      }
-      else{
-        if(ch>='a' && ch<='z'){
-          ch=(char)(ch-32);
-        }
-      }
-      counter=counter+1;
-    }
-    output=output+ch;
-    }
-    System.out.println(output);
+public class Task9{
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ System.out.print("Enter the first string: ");
+ String pass = sc.nextLine();
+ int length = pass.length();
+ int count_upper=0;
+ int count_lower=0;
+ int count_digit=0;
+ int count_special=0;
+ 
+ if (length>=8){
+ for (int i=0;i<pass.length();i++){
+  char ch=pass.charAt(i);
+  int ascii=(int)ch;
+  if ((ascii>=65 && ascii<=90)||(ascii>=97 && ascii<=122)||(ascii>=48 && ascii<=57)||(ascii==32)){
+  if (ascii>=65 && ascii<=90){
+   count_upper++;
   }
+  if (ascii>=97 && ascii<=122){
+   count_lower++;
+  }
+  if (ascii>=48 && ascii<=57){
+    count_digit++;
+  }
+  }
+  else{
+    count_special++;
+   }
+  }
+ 
+ if (count_upper>=1 && count_lower>=1 && count_digit>=1 && count_special>=1){
+  System.out.print("True");
+ }
+ else{
+  System.out.print("False"); 
+ }
+ }
+ else{
+  System.out.print("False");
+ }
+ }
 }
