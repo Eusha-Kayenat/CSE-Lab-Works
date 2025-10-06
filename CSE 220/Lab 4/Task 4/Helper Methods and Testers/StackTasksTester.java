@@ -1,40 +1,71 @@
 public class StackTasksTester {
-    
-    // Task 4
-    // You have to write this method
     public static int diamondCount(Stack stack, String str) {
-        // To Do
-        // As the stack is storing int type data in the stack and you are checking a String. Consider '>' = 1, '<' = 2 and '.' = 3 for mapping String with integer.
-        return -1; // Delete this line
+      int count = 0;  
+      for(int i=0;i<str.length();i++){
+            char c = str.charAt(i);
+            if(c=='<'){
+                stack.push(c);
+            }
+            else if(c=='>'){
+                if(stack.isEmpty()){
+                    continue;
+                }
+                int top=stack.pop();
+                char last =(char)top;
+                if(last=='<'&&c!='>'){
+                    return -1;
+                }
+                else{
+                  count++;
+                }
+            }
+        }
+    if(stack.isEmpty()){
+        return count;
     }
-
-    // Task 5
-    // You have to write this method
+    else{
+        return count;
+       }
+    }
     public static void removeBlock(Stack stack, int n) {
-        // To Do
+        Stack ste = new Stack();
+        int count = 1;
+        while(!stack.isEmpty()){
+          int elem = stack.pop();
+          if(count!=n){
+            ste.push(elem);
+          }
+          count++;
+        }
+        while(!ste.isEmpty()){
+          int val=ste.pop();
+          stack.push(val);
+        }
     }
-
-    // Task 6
-    // You have to write this method
     public static Stack conditionalReverse(Stack stack) {
-        // To Do
-        return null; //remove this line once your're done
+      if(stack.isEmpty()){
+        return null;
+      }
+      Stack val = new Stack();
+      val.push(stack.pop());
+      while(!stack.isEmpty()){
+        int elem = stack.pop();
+        if(val.peek()!=elem){
+          val.push(elem);
+        }
+      }
+        return val;
     }
-
-    //DO NOT CHANGE THIS METHOD
-    // This method is for printing the element of the stack. No need to modify anything.
     public static void printStack(Stack stack) {
         if (stack==null || stack.isEmpty()) {
             System.out.println("null");
-            return; //remove this line once your're done
+            return;
         }
         int elem = stack.pop();
         System.out.println("| " + elem + " |");
         printStack(stack);
         stack.push(elem);
     }
-
-    //DO NOT CHANGE THIS METHOD
     public static void assertTest(int actual, int expected) {
         if (actual == expected) {
             System.out.println("Test Passed!");
@@ -153,3 +184,4 @@ public class StackTasksTester {
         System.out.println("======Task 6 Test Ends Here=======");
     }
 }
+
