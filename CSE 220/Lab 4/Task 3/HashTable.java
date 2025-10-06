@@ -9,20 +9,20 @@ public class HashTable {
     private PairNode[] ht;
 
     //Constructor that initializes the HashTable array
-	//DO NOT change this Constructor
+ //DO NOT change this Constructor
     public HashTable(int size){
         this.ht = new PairNode[size];
     }
 
     //This method is called to insert each pair from the 2D Array
-	//DO NOT change this method
+ //DO NOT change this method
     public void createFromArray(Object[][] arr){
         for( Object[] x: arr )
             this.insert( x );
     }
 
     //The insert() method inserts the pair into proper Hashed Index
-	//This method is already written including collision resolve using Forward Chaining
+ //This method is already written including collision resolve using Forward Chaining
     //DO NOT change this method
     public void insert(Object[] keyValuePair){
         Integer key = (Integer)keyValuePair[0];
@@ -55,19 +55,36 @@ public class HashTable {
         }
     }
 
-	//you need to COMPLETE this method
+ //you need to COMPLETE this method
     //Complete this method first the write remove
     private int hashFunction( Integer key ){
-        // TO DO
-
-        return -1; //remove this line
+        int h = (key + 3) % 6;
+        return h;
     }
 
 
-	//you need to COMPLETE this method
+ //you need to COMPLETE this method
     //before writing remove you should complete hashFunction
     public void remove( Integer key ){
-        // TO DO 
+      int index = hashFunction(key);
+      PairNode current = ht[index];
+      if(ht[index]==null){
+        return;
+      }
+      PairNode prev = null;
+      while(current!=null){
+        if((int)current.key==key){
+          if(prev==null){
+            ht[index]=current.next;
+          }
+          else{
+            prev.next = current.next;
+          }
+          return;
+          }
+        prev=current;
+        current=current.next;
+      }
     }
-
 }
+            
