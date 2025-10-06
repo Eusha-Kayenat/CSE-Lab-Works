@@ -9,20 +9,20 @@ public class HashTable {
     private PairNode[] ht;
 
     //Constructor that initializes the HashTable array
-	//DO NOT change this Constructor
+ //DO NOT change this Constructor
     public HashTable(int size){
         this.ht = new PairNode[size];
     }
 
     //This method is called to insert each pair from the 2D Array
-	//DO NOT change this method
+ //DO NOT change this method
     public void createFromArray(Object[][] arr){
         for( Object[] x: arr )
             this.insert( x );
     }
 
     //The insert() method inserts the pair into proper Hashed Index
-	//This method is already written including collision resolve using Forward Chaining
+ //This method is already written including collision resolve using Forward Chaining
     //DO NOT change this method
     public void insert(Object[] keyValuePair){
         String key = (String)keyValuePair[0];
@@ -59,20 +59,39 @@ public class HashTable {
         }
     }
 
-	//you need to COMPLETE this method
+ //you need to COMPLETE this method
     private int hashFunction( String key ){
-        // TO DO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        return -1; //remove this line
+        int sum = 0;
+        int idx = 0;
+        if(key.length()%2!=0){
+          key+='N';
+        }
+        for(int i=0;i<key.length()-1;i=i+2){
+          char c = key.charAt(i);
+          char d = key.charAt(i+1);
+          int ascii1=(int)c;
+          int ascii2=(int)d;
+          String temp1 =Integer.toString(ascii1);
+          String temp2 =Integer.toString(ascii2);
+          String val = temp1+temp2;
+          sum+=Integer.parseInt(val);
+        }
+        idx=sum%ht.length;
+        return idx;
     }
 
 
-	//you need to COMPLETE this method
+ //you need to COMPLETE this method
     //Hint: you may need to use Integer.parseInt() to convert from String to Integer
     public String searchHashtable( Object[] keyValuePair ){
-        // TO DO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-        //it'll return either "Found" or "Not Found"
-        return null; // remove this line
+        String s = (String)keyValuePair[0];
+        int index = hashFunction(s);
+        if(ht[index]!=null && ht[index].key.equals(s)){
+          return "Found";
+        }
+        else{
+          return "Not Found";
+        }
     }
 
 }
